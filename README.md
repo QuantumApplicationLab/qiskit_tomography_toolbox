@@ -6,11 +6,9 @@
 [![Tests](https://github.com/qiskit-community/quantum-prototype-template/actions/workflows/test_latest_versions.yml/badge.svg)](https://github.com/qiskit-community/quantum-prototype-template/actions/workflows/test_latest_versions.yml)
 [![Coverage](https://coveralls.io/repos/github/qiskit-community/quantum-prototype-template/badge.svg?branch=main)](https://coveralls.io/github/qiskit-community/quantum-prototype-template?branch=main)
 
-# Quantum Prototype Template
+# Qiskit Tomography Toolbox
 
-This template repository is a tool for creating Python projects quickly by providing much of the necessary boilerplate code. The code examples in this template repository are written in accordance with pylint style checks, and the sample `prototype_template` module has an associated unit test module. We have also included examples of coverage testing, notebook tests, and notebook lint checks and wrapped all of these using [tox](https://github.com/tox-dev/tox) automated testing software. Check out the [file glossary](https://github.com/qiskit-community/quantum-prototype-template/blob/main/docs/file-map-and-description.md) for more information on each tool used in this repository.
-
-We encourage you to use this template repository to begin your own research projects!
+This repository contains dedicated routine to unify the use of different tomography techniques for qiskit. 
 
 ### Table of Contents
 
@@ -32,15 +30,6 @@ We encourage you to use this template repository to begin your own research proj
 
 1. [Contribution Guide](CONTRIBUTING.md)
 2. [Technical Docs](docs/technical_docs.md)
-
-
-----------------------------------------------------------------------------------------------------
-
-### How to Give Feedback
-
-We encourage your feedback! You can share your thoughts with us by:
-- [Opening an issue](https://github.com/qiskit-community/quantum-prototype-template/issues) in the repository
-
 
 ----------------------------------------------------------------------------------------------------
 
