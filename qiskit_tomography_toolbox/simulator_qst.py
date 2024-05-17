@@ -6,8 +6,7 @@ from .base_tomography import BaseTomography
 
 class SimulatorQST(BaseTomography):
     def __init__(self, circuit: QuantumCircuit):
-        """_summary_
-
+        """Simulator based QST.
         Args:
             circuit (QuantumCircuit): The circuit
         """
@@ -15,7 +14,7 @@ class SimulatorQST(BaseTomography):
         self.num_qubits = circuit.num_qubits
 
     def get_relative_amplitude_sign(self, parameters: np.ndarray):
-        """_summary_
+        """Get the relative amplitude signes between the amplitudes.
 
         Args:
             parameters (np.ndarray): parameters of the circuits
@@ -28,8 +27,7 @@ class SimulatorQST(BaseTomography):
     def get_statevector(
         self, parameters: np.ndarray, **kwargs
     ):  # pylint: disable=unused-argument
-        """_summary_
-
+        """Get the state vector of the circuit.
         Args:
             parameters (np.ndarray): parameters of the circuits
         """
