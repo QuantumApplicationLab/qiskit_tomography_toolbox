@@ -32,3 +32,15 @@ class SimulatorQST(BaseTomography):
             parameters (np.ndarray): parameters of the circuits
         """
         return (Statevector(self.circuit.assign_parameters(parameters))).data.real
+
+    def get_density_matrix(self, parameters: np.ndarray) -> np.ndarray:
+        """Get the density matrix of the circuit
+
+        Args:
+            parameters (np.ndarray): parameter of the circuit
+
+        Returns:
+            np.ndarray: density matrix
+        """
+        vector = self.get_statevector(parameters)
+        return np.outer(vector, vector)

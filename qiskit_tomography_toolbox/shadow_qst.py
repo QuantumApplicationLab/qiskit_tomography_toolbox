@@ -118,7 +118,7 @@ class ShadowQST(BaseTomography):
                 total_count.append(count)
         return shadows, total_count
 
-    def get_rho(self, samples, labels=None):
+    def get_density_matrix(self, samples, labels=None):
         """_summary_
 
         Args:
@@ -140,7 +140,7 @@ class ShadowQST(BaseTomography):
         """
 
         samples = self.get_samples(parameters)
-        rho = self.get_rho(samples)
+        rho = self.get_density_matrix(samples)
         return np.sign(rho[0, :].real)
 
     def get_amplitudes(self, parameters):
@@ -167,7 +167,7 @@ class ShadowQST(BaseTomography):
         """
         if samples is None:
             samples = self.get_samples(parameters)
-        rho = self.get_rho(samples, labels=labels)
+        rho = self.get_density_matrix(samples, labels=labels)
         signs = np.sign(rho[0, :].real)
         # amplitudes = np.sqrt(np.diag(rho).real)
         amplitudes = self.get_amplitudes(parameters)
@@ -182,5 +182,5 @@ class ShadowQST(BaseTomography):
             counts (_type_): _description_
         """
         samples = self.get_samples(parameters)
-        rho = self.get_rho(samples)
+        rho = self.get_density_matrix(samples)
         return np.trace(obs @ rho)
