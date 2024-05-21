@@ -2,16 +2,18 @@
     "dependencies_files": [],
     "language": {
         "name": "python",
-        "versions": ["3.9"]
+        "versions": [
+            "3.9"
+        ]
     },
     "tests_command": [
         "python -m pytest -v --doctest-modules"
     ],
     "styles_check_command": [
-        "pylint -rn prototype_template tests"
+        "pylint -rn qiskit_tomography_toolbox tests"
     ],
     "coverages_check_command": [
-        "coverage3 run --source prototype_template --parallel-mode -m pytest --doctest-modules",
+        "coverage3 run --source qiskit_tomography_toolbox --parallel-mode -m pytest --doctest-modules",
         "coverage3 combine"
     ]
 }

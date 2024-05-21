@@ -1,6 +1,6 @@
-.. prototype_template:
+.. qiskit_tomography_toolbox:
 
-.. module:: prototype_template
+.. module:: qiskit_tomography_toolbox
 
 =============================
 Template API References
