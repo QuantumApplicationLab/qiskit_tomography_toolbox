@@ -9,6 +9,8 @@ from .base_tomography import BaseTomography
 
 
 class HTreeQST(BaseTomography):
+    """Tomography of real wave function based on a Hadammard Tree."""
+
     def __init__(
         self,
         circuit: QuantumCircuit,
@@ -23,8 +25,8 @@ class HTreeQST(BaseTomography):
             sampler (Sampler): A sampler primitive
         """
         # store the roots/leaves of each level for faster processing
-        self.root = []
-        self.leaf = []
+        self.root: List = []
+        self.leaf: List = []
 
         # circuit and size
         self.circuit = circuit
@@ -50,10 +52,10 @@ class HTreeQST(BaseTomography):
         self.list_circuits = self.get_circuits()
         self.ncircuits = len(self.list_circuits)
 
-    def get_tree(self) -> Tuple[List, List, List]:
+    def get_tree(self) -> List:
         """Compute the tree"""
 
-        def init_tree():
+        def init_tree() -> Tuple[List, List, List]:
             """initialize the tree
 
             Returns:
@@ -101,13 +103,13 @@ class HTreeQST(BaseTomography):
         self.root += root
         self.leaf += leaf
 
-        return tree
+        return tree  # type: ignore[return-value]
 
     def get_path(self) -> List:
         """Create the paths between the root and all the leaves"""
         paths = []
         for inode in range(self.size):
-            paths.append(list(self.tree.rsearch(inode)))
+            paths.append(list(self.tree.rsearch(inode)))  # type: ignore[attr-defined]
         return paths
 
     def get_path_sparse_matrix(self) -> sparse.sparray:

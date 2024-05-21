@@ -1,3 +1,4 @@
+# Simulator based QST
 import numpy as np
 from qiskit.quantum_info import Statevector
 from qiskit import QuantumCircuit
@@ -5,6 +6,12 @@ from .base_tomography import BaseTomography
 
 
 class SimulatorQST(BaseTomography):
+    """Simulator based QST
+
+    Args:
+        BaseTomography (Base class): Abstract base class
+    """
+
     def __init__(self, circuit: QuantumCircuit):
         """Simulator based QST.
         Args:

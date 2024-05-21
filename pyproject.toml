@@ -1,23 +1,21 @@
 # file pyproject.toml
 
 [project]
-name = "prototype_template"
-dynamic = [
-    "version",
-]
+name = "qiskit_tomography_toolbox"
+dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.8"
-license = {file = "LICENSE.txt"}
-description = "Repository for a quantum prototype"
-authors = [
-   { name = "My Name", email = "my.email@email.net"},
-]
+license = { file = "LICENSE.txt" }
+description = "Toolbox for quantum tomography in qiskit"
+authors = [{ name = "Nicolas Renaud", email = "nicolas.gm.renaud@gmail.com" }]
 
 dependencies = [
+    "treelib",
     "certifi>=2021.5.30",
     "importlib_metadata>=4.8.1",
     "qiskit-aer>=0.10.3",
     "qiskit>=0.14.1",
+    "qiskit_experiments",
 ]
 
 [project.optional-dependencies]
@@ -42,16 +40,11 @@ dev = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/qiskit-community/quantum-prototype-template"
-"Bug Tracker" = "https://github.com/qiskit-community/quantum-prototype-template/issues"
+"Homepage" = "https://github.com/QuantumApplicationLab/qiskit_tomography_toolbox"
+"Bug Tracker" = "https://github.com/QuantumApplicationLab/qiskit_tomography_toolbox/issues"
 
 [build-system]
-requires = [
-    "setuptools>=61.0",
-    "wheel",
-    "toml",
-    "setuptools-scm",
-]
+requires = ["setuptools>=61.0", "wheel", "toml", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]

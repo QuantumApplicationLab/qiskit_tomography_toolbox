@@ -7,7 +7,10 @@ from qiskit_tomography_toolbox import FullQST, SimulatorQST, HTreeQST, ShadowQST
 
 
 class TestTomography(TestCase):
+    """Test the tomography methods"""
+
     def setUp(self):
+        """Set up the test"""
         super().setUp()
 
         # define ansatz
@@ -20,6 +23,7 @@ class TestTomography(TestCase):
         )
 
     def test_full_qst(self):
+        """Test the full qst from qiskit exp."""
         backend = Aer.get_backend("statevector_simulator")
         _ = FullQST(self.ansatz, backend, shots=10000)
         # this test fails on GH actions but not locally ...
@@ -27,12 +31,14 @@ class TestTomography(TestCase):
         # assert np.allclose(self.ref, sol) or np.allclose(self.ref, -sol)
 
     def test_htree_qst(self):
+        """Test the htree tomography"""
         sampler = Sampler()
         htree_qst = HTreeQST(self.ansatz, sampler)
         sol = htree_qst.get_relative_amplitude_sign(self.parameters)
         assert np.allclose(self.ref, sol) or np.allclose(self.ref, -sol)
 
     def test_shadow_qst(self):
+        """Test the classical shadow qst."""
         sampler = Sampler()
         shadow_qst = ShadowQST(self.ansatz, sampler, 10000)
         _ = shadow_qst.get_relative_amplitude_sign(self.parameters)
