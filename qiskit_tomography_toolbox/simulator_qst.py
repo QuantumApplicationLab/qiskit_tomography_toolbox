@@ -31,7 +31,7 @@ class SimulatorQST(BaseTomography):
         ).data.real
         return np.sign(state_vector)
 
-    def get_statevector(
+    def get_state_vector(
         self, parameters: np.ndarray, **kwargs
     ):  # pylint: disable=unused-argument
         """Get the state vector of the circuit.
@@ -49,5 +49,5 @@ class SimulatorQST(BaseTomography):
         Returns:
             np.ndarray: density matrix
         """
-        vector = self.get_statevector(parameters)
+        vector = self.get_state_vector(parameters)
         return np.outer(vector, vector)

@@ -222,7 +222,7 @@ class ShadowQST(BaseTomography):
             samples.append(proba)
         return np.sqrt(samples[0])
 
-    def get_statevector(
+    def get_state_vector(
         self,
         parameters: np.ndarray,
         samples: Optional[Union[List, None]] = None,

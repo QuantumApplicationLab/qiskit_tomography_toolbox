@@ -211,7 +211,7 @@ class HTreeQST(BaseTomography):
         weights = self.get_weight(samples)
         return self.get_signs(weights)
 
-    def get_statevector(self, parameters: np.ndarray) -> np.ndarray:
+    def get_state_vector(self, parameters: np.ndarray) -> np.ndarray:
         """Get the statevector of the circuit
 
         Args:
@@ -236,5 +236,5 @@ class HTreeQST(BaseTomography):
         Returns:
             np.ndarray: density matrix
         """
-        vector = self.get_statevector(parameters)
+        vector = self.get_state_vector(parameters)
         return np.outer(vector, vector)

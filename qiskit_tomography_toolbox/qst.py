@@ -71,7 +71,7 @@ class FullQST(BaseTomography):
         qstdata1 = qstexp1.run(self.backend, shots=self.shots).block_for_results()
         return qstdata1.analysis_results("state").value.data.real
 
-    def get_statevector(self, parameters: np.ndarray) -> np.ndarray:
+    def get_state_vector(self, parameters: np.ndarray) -> np.ndarray:
         """Get the statevector.
 
         Args:

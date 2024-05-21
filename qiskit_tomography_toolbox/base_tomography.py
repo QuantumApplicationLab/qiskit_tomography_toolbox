@@ -6,7 +6,7 @@ class BaseTomography(ABC):
     """Abstract base class for the tomography."""
 
     @abstractmethod
-    def get_statevector(self, parameters: np.ndarray) -> np.ndarray:
+    def get_state_vector(self, parameters: np.ndarray) -> np.ndarray:
         """Get the statevector of the circuit
 
         Args:
@@ -15,7 +15,7 @@ class BaseTomography(ABC):
         Returns:
             np.ndarray: state vector
         """
-        raise NotImplementedError("Implmenent a get_statevector method")
+        raise NotImplementedError("Implmenent a get_state_vector method")
 
     @abstractmethod
     def get_density_matrix(self, parameters: np.ndarray) -> np.ndarray:
